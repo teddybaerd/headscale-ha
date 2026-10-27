@@ -24,3 +24,11 @@ The integration sends only GET requests to `/api/v1/node`; it does not provide w
 Polling interval: 60 seconds. This is community software and may need changes for future Home Assistant or Headscale versions. The integration stores API credentials in the Home Assistant config entry, not in the repository. Node data may contain sensitive information; diagnostics or logs should be sanitized before sharing.
 
 API reference: https://github.com/juanfont/headscale/blob/v0.29.4/proto/headscale/v1/node.proto
+
+## License, origin and AI assistance
+
+This project is licensed under the [Apache License 2.0](LICENSE).
+
+The implementation was developed for a self-hosted Headscale server and was informed by Home Assistant Core's [Tailscale integration](https://github.com/home-assistant/core/tree/2026.7.4/homeassistant/components/tailscale), which is licensed under Apache 2.0. Its config flow and entity/coordinator patterns were consulted and adapted for Headscale's different REST API. This repository is an independently maintained custom integration; it is not an official Home Assistant integration or a GitHub fork of the Home Assistant repository. See [NOTICE](NOTICE) for attribution.
+
+This project was created by Markus (teddybaerd) with the assistance of OpenAI's ChatGPT (Codex), which helped research, generate, and document the code. It remains experimental; the initial API unit tests passed, but live Home Assistant and Headscale testing is still required.
