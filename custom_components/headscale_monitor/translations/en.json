@@ -1,1 +1,57 @@
-{"config":{"step":{"user":{"title":"Connect to Headscale","description":"Enter the HTTPS server URL and a Headscale API key. The integration only reads the node list.","data":{"url":"Headscale URL","api_key":"API key"}},"reauth_confirm":{"title":"Reauthenticate","description":"Enter a new Headscale API key.","data":{"api_key":"API key"}}},"error":{"invalid_url":"Enter an HTTPS server URL without a path.","invalid_auth":"The API key was rejected.","cannot_connect":"Could not retrieve nodes from Headscale."},"abort":{"already_configured":"This server is already configured.","reauth_successful":"Authentication was updated."}},"entity":{"sensor":{"ip":{"name":"IP address"},"last_seen":{"name":"Last seen"},"expiry":{"name":"Key expiry"},"available_routes":{"name":"Advertised routes"},"approved_routes":{"name":"Approved routes"},"subnet_routes":{"name":"Subnet routes"}},"binary_sensor":{"online":{"name":"Connected to control server"}}}}
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Headscale",
+        "description": "Enter the HTTPS server URL and a Headscale API key. The integration only reads the node list.",
+        "data": {
+          "url": "Headscale URL",
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate",
+        "description": "Enter a new Headscale API key.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Enter an HTTPS server URL without a path.",
+      "invalid_auth": "The API key was rejected.",
+      "cannot_connect": "Could not retrieve nodes from Headscale."
+    },
+    "abort": {
+      "already_configured": "This server is already configured.",
+      "reauth_successful": "Authentication was updated."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ip": {
+        "name": "IP address"
+      },
+      "last_seen": {
+        "name": "Last seen"
+      },
+      "expiry": {
+        "name": "Key expiry"
+      },
+      "available_routes": {
+        "name": "Advertised routes"
+      },
+      "approved_routes": {
+        "name": "Approved routes"
+      },
+      "subnet_routes": {
+        "name": "Subnet and exit routes"
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Connected to control server"
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@ class HeadscaleEntity(CoordinatorEntity):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, f"{entry.entry_id}_{node_id}")},
             name=node.get("givenName") or node.get("name") or f"Node {node_id}",
-            manufacturer="Headscale", via_device=(DOMAIN, entry.entry_id),
+            manufacturer="Headscale", via_device_id=coordinator.hub_device_id,
         )
 
     @property

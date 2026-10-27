@@ -1,1 +1,10 @@
-{"domain":"headscale_monitor","name":"Headscale Monitor","version":"0.1.0","config_flow":true,"documentation":"https://github.com/teddybaerd/headscale-ha","issue_tracker":"https://github.com/teddybaerd/headscale-ha/issues","iot_class":"cloud_polling","requirements":[]}
+{
+  "domain": "headscale_monitor",
+  "name": "Headscale Monitor",
+  "version": "0.1.1",
+  "config_flow": true,
+  "documentation": "https://github.com/teddybaerd/headscale-ha",
+  "issue_tracker": "https://github.com/teddybaerd/headscale-ha/issues",
+  "iot_class": "cloud_polling",
+  "requirements": []
+}

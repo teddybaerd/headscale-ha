@@ -1,10 +1,8 @@
 """Headscale node sensors."""
 from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
 from homeassistant.const import EntityCategory
-from homeassistant.helpers import device_registry as dr
 from homeassistant.util.dt import parse_datetime
 
-from .const import DOMAIN
 from .entity import HeadscaleEntity
 
 SENSORS = ("ip", "last_seen", "expiry", "available_routes", "approved_routes", "subnet_routes")
@@ -12,8 +10,6 @@ SENSORS = ("ip", "last_seen", "expiry", "available_routes", "approved_routes", "
 
 async def async_setup_entry(hass, entry, async_add_entities):
     coordinator = entry.runtime_data
-    dr.async_get(hass).async_get_or_create(config_entry_id=entry.entry_id,
-        identifiers={(DOMAIN, entry.entry_id)}, name="Headscale", manufacturer="Headscale")
     known = set()
 
     def add_new():

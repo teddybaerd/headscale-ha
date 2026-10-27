@@ -1,1 +1,57 @@
-{"config":{"step":{"user":{"title":"Mit Headscale verbinden","description":"Gib die HTTPS-Adresse des Servers und einen Headscale-API-Schlüssel ein. Die Integration liest nur die Geräteliste.","data":{"url":"Headscale-Adresse","api_key":"API-Schlüssel"}},"reauth_confirm":{"title":"Erneut anmelden","description":"Gib einen neuen Headscale-API-Schlüssel ein.","data":{"api_key":"API-Schlüssel"}}},"error":{"invalid_url":"Gib eine HTTPS-Serveradresse ohne Pfad ein.","invalid_auth":"Der API-Schlüssel wurde abgelehnt.","cannot_connect":"Die Geräteliste konnte nicht von Headscale abgerufen werden."},"abort":{"already_configured":"Dieser Server ist bereits eingerichtet.","reauth_successful":"Die Anmeldung wurde aktualisiert."}},"entity":{"sensor":{"ip":{"name":"IP-Adresse"},"last_seen":{"name":"Zuletzt gesehen"},"expiry":{"name":"Schlüssel läuft ab"},"available_routes":{"name":"Angebotene Routen"},"approved_routes":{"name":"Freigegebene Routen"},"subnet_routes":{"name":"Subnetzrouten"}},"binary_sensor":{"online":{"name":"Mit Steuerungsserver verbunden"}}}}
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mit Headscale verbinden",
+        "description": "Gib die HTTPS-Adresse des Servers und einen Headscale-API-Schlüssel ein. Die Integration liest nur die Geräteliste.",
+        "data": {
+          "url": "Headscale-Adresse",
+          "api_key": "API-Schlüssel"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Erneut anmelden",
+        "description": "Gib einen neuen Headscale-API-Schlüssel ein.",
+        "data": {
+          "api_key": "API-Schlüssel"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gib eine HTTPS-Serveradresse ohne Pfad ein.",
+      "invalid_auth": "Der API-Schlüssel wurde abgelehnt.",
+      "cannot_connect": "Die Geräteliste konnte nicht von Headscale abgerufen werden."
+    },
+    "abort": {
+      "already_configured": "Dieser Server ist bereits eingerichtet.",
+      "reauth_successful": "Die Anmeldung wurde aktualisiert."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ip": {
+        "name": "IP-Adresse"
+      },
+      "last_seen": {
+        "name": "Zuletzt gesehen"
+      },
+      "expiry": {
+        "name": "Schlüssel läuft ab"
+      },
+      "available_routes": {
+        "name": "Angebotene Routen"
+      },
+      "approved_routes": {
+        "name": "Freigegebene Routen"
+      },
+      "subnet_routes": {
+        "name": "Subnetz- und Exit-Routen"
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Mit Steuerungsserver verbunden"
+      }
+    }
+  }
+}
