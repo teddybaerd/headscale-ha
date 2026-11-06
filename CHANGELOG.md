@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+- Allow deleting obsolete node devices and all associated entities from Home Assistant.
+- Verify node absence with a fresh Headscale request; protect registered/offline nodes and the hub, and reject deletion on API/authentication failure.
+- Bundle Headscale-derived light/dark icons and logos with BSD-3-Clause attribution.
+- Preserve manual cleanup: no automatic deletions and no changes to Headscale.
+
 ## 0.1.1
 
 - Fixed Home Assistant device registry compatibility by registering the Headscale hub before linking node devices.

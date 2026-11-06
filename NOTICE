@@ -5,3 +5,5 @@ The integration was developed with reference to Home Assistant Core's Tailscale 
 Headscale's API schema was consulted at https://github.com/juanfont/headscale/blob/v0.29.4/proto/headscale/v1/node.proto.
 
 The project was created by Markus (teddybaerd) with assistance from OpenAI's ChatGPT (Codex), including research, code generation and documentation.
+
+Bundled brand artwork is derived from Headscale docs/assets/logo/headscale3-dots.svg (Copyright (c) 2020, Juan Font), under BSD-3-Clause. The full license and modification details are included in custom_components/headscale_monitor/brand/.
