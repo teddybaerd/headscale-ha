@@ -4,7 +4,13 @@ Experimental, read-only custom integration for a self-hosted Headscale control s
 
 ## Devices and entities
 
-For each node: connection to control server, IP address, last seen, key expiry, and counts of advertised, approved and subnet/exit routes. The subnet/exit routes list includes default routes (0.0.0.0/0 and ::/0). The route lists and additional IP addresses are entity attributes. New nodes are discovered during polling; removed nodes become unavailable. A connection to the control server does not establish peer-to-peer reachability. Approved routes are not necessarily currently advertised or working. The node's expiry field is displayed as a timestamp; if Headscale supplies no usable timestamp it is unknown. This is the node expiry, not the API key expiry. Last seen is supplied by Headscale and may remain old while a node is online; it is not a live heartbeat. Tailscale cloud-specific update and network diagnostics are not available.
+For each node: connection to control server, IP address, last seen, key expiry, and counts of advertised, approved and subnet/exit routes. The subnet/exit routes list includes default routes (0.0.0.0/0 and ::/0). The route lists and additional IP addresses are entity attributes. New nodes are discovered during polling; removed nodes become unavailable and can be deleted manually together with their entities. A connection to the control server does not establish peer-to-peer reachability. Approved routes are not necessarily currently advertised or working. The node's expiry field is displayed as a timestamp; if Headscale supplies no usable timestamp it is unknown. This is the node expiry, not the API key expiry. Last seen is supplied by Headscale and may remain old while a node is online; it is not a live heartbeat. Tailscale cloud-specific update and network diagnostics are not available.
+
+## Removing old devices
+
+After removing an old node in Headscale/Headplane, open its device page in Home Assistant and choose **Delete** in the device menu. Home Assistant removes the local device and its associated entities. Before deletion, the integration makes a fresh, read-only request to Headscale to confirm that the node ID is absent. Nodes still registered in Headscale (including offline nodes), the Headscale hub, and devices whose absence cannot be verified because of an API/authentication error cannot be deleted. Nothing is deleted from Headscale by this action. No automatic cleanup is performed.
+
+After updating, restart Home Assistant to load the removal support and bundled brand images. If the old placeholder persists, refresh the browser.
 
 ## Requirements and installation
 
@@ -32,3 +38,7 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 The implementation was developed for a self-hosted Headscale server and was informed by Home Assistant Core's [Tailscale integration](https://github.com/home-assistant/core/tree/2026.7.4/homeassistant/components/tailscale), which is licensed under Apache 2.0. Its config flow and entity/coordinator patterns were consulted and adapted for Headscale's different REST API. This repository is an independently maintained custom integration; it is not an official Home Assistant integration or a GitHub fork of the Home Assistant repository. See [NOTICE](NOTICE) for attribution.
 
 This project was created by Markus (teddybaerd) with the assistance of OpenAI's ChatGPT (Codex), which helped research, generate, and document the code. It remains experimental; basic live Home Assistant and Headscale testing has been performed, but broader testing is still required.
+
+## Brand artwork
+
+The bundled icon adapts the dots, colors and brackets of the [Headscale artwork](https://github.com/juanfont/headscale/tree/main/docs/assets/logo) into a square layout. The wider logo retains the upstream layout. Attribution, source details and the upstream BSD-3-Clause license are included in `custom_components/headscale_monitor/brand/`. Headscale Monitor is an independent community integration, not endorsed by Headscale or Tailscale. No Tailscale logo or Home Assistant logo is included.
